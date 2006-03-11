@@ -5,11 +5,12 @@
 Summary:	rox-System - system monitor
 Name:		rox-%{_name}
 Version:	1.9.1
-Release:	0.1
+Release:	0.2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/rox/system-%{version}.tar.bz2
 # Source0-md5:	5b3aa4e1905e08ea14206d894b6b5580
+Source1:	%{name}.desktop
 URL:		http://rox.sourceforge.net/desktop/System
 Requires:	libgtop
 Requires:	python-ctypes
@@ -29,12 +30,16 @@ running, the amount of memory they are using and used disk space.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_roxdir}/%{_name}/{Help,Messages,images}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 cd %{_name}
 install .DirIcon AppRun *.py *.xml $RPM_BUILD_ROOT%{_roxdir}/%{_name}
 install Help/README $RPM_BUILD_ROOT%{_roxdir}/%{_name}/Help
 install Messages/*.gmo $RPM_BUILD_ROOT%{_roxdir}/%{_name}/Messages
 install images/*.png $RPM_BUILD_ROOT%{_roxdir}/%{_name}/images
+
+install .DirIcon $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
+sed -e "s,/lib/,/%{_lib}/," %{SOURCE1} > $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 
 %py_comp $RPM_BUILD_ROOT%{_roxdir}/%{_name}
 %py_ocomp $RPM_BUILD_ROOT%{_roxdir}/%{_name}
@@ -56,3 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 %lang(zh_CN) %{_roxdir}/%{_name}/Messages/zh_CN.gmo
 %lang(zh_TW) %{_roxdir}/%{_name}/Messages/zh_TW.gmo
 %{_roxdir}/%{_name}/images
+%{_desktopdir}/%{name}.desktop
+%{_pixmapsdir}/%{name}.png
