@@ -1,8 +1,6 @@
-# TODO:
-# - polish summary and description
-
 %define _name System
 Summary:	rox-System - system monitor
+Summary(pl):	rox-System - monitor systemu
 Name:		rox-%{_name}
 Version:	1.9.1
 Release:	0.2
@@ -23,6 +21,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 rox-System displays information about your system - what processes are
 running, the amount of memory they are using and used disk space.
+
+%description -l pl
+rox-System wy¶wietla informacje o systemie - jakie procesy dzia³aj±,
+ilo¶æ u¿ywanej przez nie pamiêci oraz wykorzystanie miejsca na dysku.
 
 %prep
 %setup -q -n system-%{version}
@@ -50,6 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc System/Help/Changes
+%dir %{_roxdir}/%{_name}
 %attr(755,root,root) %{_roxdir}/%{_name}/AppRun
 %{_roxdir}/%{_name}/.DirIcon
 %{_roxdir}/%{_name}/*.py[co]
