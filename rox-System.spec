@@ -3,7 +3,7 @@ Summary:	rox-System - system monitor
 Summary(pl):	rox-System - monitor systemu
 Name:		rox-%{_name}
 Version:	1.9.1
-Release:	0.2
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/rox/system-%{version}.tar.bz2
