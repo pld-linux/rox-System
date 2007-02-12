@@ -1,6 +1,6 @@
 %define _name System
 Summary:	rox-System - system monitor
-Summary(pl):	rox-System - monitor systemu
+Summary(pl.UTF-8):   rox-System - monitor systemu
 Name:		rox-%{_name}
 Version:	1.9.1
 Release:	1
@@ -22,9 +22,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 rox-System displays information about your system - what processes are
 running, the amount of memory they are using and used disk space.
 
-%description -l pl
-rox-System wy¶wietla informacje o systemie - jakie procesy dzia³aj±,
-ilo¶æ u¿ywanej przez nie pamiêci oraz wykorzystanie miejsca na dysku.
+%description -l pl.UTF-8
+rox-System wyÅ›wietla informacje o systemie - jakie procesy dziaÅ‚ajÄ…,
+iloÅ›Ä‡ uÅ¼ywanej przez nie pamiÄ™ci oraz wykorzystanie miejsca na dysku.
 
 %prep
 %setup -q -n system-%{version}
