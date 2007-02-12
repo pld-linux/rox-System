@@ -1,6 +1,6 @@
 %define _name System
 Summary:	rox-System - system monitor
-Summary(pl.UTF-8):   rox-System - monitor systemu
+Summary(pl.UTF-8):	rox-System - monitor systemu
 Name:		rox-%{_name}
 Version:	1.9.1
 Release:	1
